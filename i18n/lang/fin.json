@@ -39,6 +39,7 @@
     "total":"yhteensä",
     "type":"tyyppi",
     "copy":"Kopio",
+    "def":"oletuksena",
     "light":"valkoinen",
     "dark":"musta",
     "service":"Asiakkaiden palvelut",

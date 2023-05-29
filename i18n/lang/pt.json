@@ -39,6 +39,7 @@
     "total":"Total",
     "type":"Tipo",
     "copy":"Cópia",
+    "def": "padrão",
     "light":"Branco",
     "dark":"Preto",
     "service":"Serviço Ao cliente",

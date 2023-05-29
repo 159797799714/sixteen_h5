@@ -39,6 +39,7 @@
     "total":"ogółem",
     "type":"rodzaj",
     "copy":"kopiuj",
+    "def": "domyślny",
     "light":"białe",
     "dark":"czarny",
     "service":"obsługi klienta",
