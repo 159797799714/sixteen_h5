@@ -21,7 +21,7 @@ socket1.on('message',(evt)=>{
 Vue.use(Vuex)
 
 function defaultTheme() {
-  // return `dark`
+  return `def`
 	// 获取当前时间
 	let timeNow = new Date();
 	// 获取当前小时
@@ -126,7 +126,7 @@ let store = new Vuex.Store({
 	  }
     ],
     // 主题
-    theme:uni.getStorageSync('theme')||defaultTheme(),
+    theme:uni.getStorageSync('theme') || defaultTheme(),
     // 自定义页面下标
     pageIdx:0
   },

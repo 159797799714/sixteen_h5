@@ -4,7 +4,7 @@ let def = `
     --text-color: #666;
     --panel-1: fff;
     --panel-2: #ebedf0;
-    --panel-3: #fff;
+    --panel-3: #ebf7fa;
     --form-panel-3: #f7f7f7;
     --panel-4: #fff;
     --form-panel-4: #F1F1F6;

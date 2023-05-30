@@ -102,14 +102,14 @@ function navFontColor() {
 	let theme = uni.getStorageSync('theme') || defaultTheme()
 	setTimeout(() => {
 		uni.setNavigationBarColor({
-			frontColor: theme == 'light' ? '#000000' : '#ffffff',
+			frontColor: theme == 'dark' ?'#ffffff' : '#000000' ,
 			backgroundColor: '#cccccc',
 		})
 	}, 300)
 }
 function localImgUrl(name) {
 	let theme = uni.getStorageSync('theme') || defaultTheme()
-	let str = theme == 'light' ? 'static/img/light/' : 'static/img/'
+	let str = theme == 'dark' ? 'static/img/' : 'static/img/light/'
 	return str + name
 }
 vue.prototype.$imgUrl = app.imgUrl

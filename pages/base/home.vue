@@ -61,14 +61,6 @@
       <!-- 次一级导航 -->
       <view class="nav2 p-x-md m-t-xl d-flex justify-around fn-center">
 		  
-       <v-link tag="div" :to="{path:'/pages/base/index',query:{
-          tel:'option-list'
-        }}" class="item">
-          <view class="icon fn-22">
-            <img class="h-54" src="static/img/homeqiquanicon.png" />
-          </view>
-          <view class="fn-12">{{ $t("base.a4") }}</view>
-        </v-link>
 		
         <v-link tag="div" :to="{path:'/pages/pledge/index',query:{
           tel:'exchange-operation'
@@ -78,6 +70,15 @@
           </view>
           <view class="fn-12">{{ $t("pledge.funcname") }}</view>
         </v-link>
+        
+       <v-link tag="div" :to="{path:'/pages/base/index',query:{
+          tel:'option-list'
+        }}" class="item">
+          <view class="icon fn-22">
+            <img class="h-54" src="static/img/homeqiquanicon.png" />
+          </view>
+          <view class="fn-12">{{ $t("base.a4") }}</view>
+        </v-link>
         <v-link tag="div" :to="{path:'/pages/base/index',query:{
           tel:'exchange-operation'
         }}" class="item" >
@@ -86,6 +87,12 @@
           </view>
           <view class="fn-12">{{ $t("exchange.a1") }}</view>
         </v-link>
+        <v-link tag="div" :to="{path:'/pages/invite/index'}" class="item" >
+          <view class="icon fn-22">
+            <img class="h-54" src="static/img/4.png" />
+          </view>
+          <view class="fn-12">{{ $t("base.b7") }}</view>
+        </v-link> 
         <v-link tag="div" :to="{path:'/pages/base/kefu'}" class="item" >
           <view class="icon fn-22">
             <img class="h-54" src="static/img/renzheng.png" />
@@ -107,8 +114,8 @@
           <img width="100%" height="100%" fit="cover" :src="item.imgurl" />
         </swiper-item>
       </swiper>
-	  <view class='middleList bg-panel-3 box-shadow rounded-sm m-x-md'>
-		  <v-link class="middleArea"  v-for="(item, idx) in topList" :to="{
+	  <view class='middleList m-x-md'>
+		  <v-link class="middleArea bg-panel-3 box-shadow rounded-sm"  v-for="(item, idx) in topList" :to="{
                     path: '/pages/exchange/index',
                     query: { code: item.pair_name },
                   }">
@@ -145,7 +152,6 @@
             <view class="stock-index-img fn-12 color-gray-6 m-b-md">
               <view>{{ item.pair_name }}</view>
             </view>
-            <view class="fn-18 color-light">{{ item.close }}</view>
             <view
               class="d-flex flex-col align-center fn-sm"
               :class="item.increase * 1 < 0 ? 'color-sell' : 'color-buy'"
@@ -155,11 +161,12 @@
                 >≈ {{ getOldPrice(item.close, item.increase) }}</view
               >
             </view>
+            <view class="fn-18 color-light">{{ item.close }}</view>
           </view>
         </view>
       </view>
       <!-- 科创板 -->
-     <view class="head_info m-y-xl">
+     <view class="head_info">
 
         <van-tabs
           v-if="marketList.length"
@@ -204,16 +211,16 @@
                   <view class="color-light fn-left w-4/12">
                     <view class="d-flex align-end">{{ item.pair_name }}</view>
                   </view>
-                  <view class="fn-left align-end color-light w-3/12">
-                    <view class="d-flex align-end">{{ item.close }}</view>
-                  </view>
-                  <view class="fn-right w-3/12">
+                  <view class="fn-left align-end color-light w-3/12 f-24">
                     <span
                       :class="
                         item.increase * 1 < 0 ? 'color-sell' : 'color-buy'
                       "
                       >{{ item.increaseStr }}</span
                     >
+                  </view>
+                  <view class="fn-right w-3/12">
+                    <view class="d-flex align-end">{{ item.close }}</view>
                   </view>
                 </v-link>
               </view>
@@ -265,7 +272,10 @@
             </view>
           </label> -->
 
-          <view class="theme-item def-color" :class="theme == 'dev' ? 'active-theme': ''"  @click="changtTheme('def')">{{ $t("common.def") }}</view>
+          
+        <!-- 主题切换 -->
+
+          <view class="theme-item def-color" :class="theme == 'def' ? 'active-theme': ''"  @click="changtTheme('def')">{{ $t("common.def") }}</view>
           <view class="theme-item light-color" :class="theme == 'light' ? 'active-theme': ''"  @click="changtTheme('light')">{{ $t("common.light") }}</view>
           <view class="theme-item dark-color" :class="theme == 'dark' ? 'active-theme': ''"  @click="changtTheme('dark')">{{ $t("common.dark") }}</view>
         </view>
@@ -300,7 +310,6 @@
         </view>
       </view> -->
       <view class="personalCenter-bottom">
-
 
 
 
@@ -655,12 +664,12 @@ export default {
 <style lang="scss" scoped>
 	.middleList{
 		display:flex;
-		margin:55rpx 0 0;
+		margin:25rpx 0 0;
 		justify-content:space-around;
-		padding:15rpx;
 	}
 	.middleArea{
-		width:30%;
+    padding: 15px 0;
+		width:45%;
 	}
 	.coinHeader{
 		display: flex;
@@ -699,6 +708,7 @@ export default {
   }
 }
 .stock-swipe {
+  background-color: none;
   .stock-index {
     display: flex;
     flex-direction: column;
@@ -851,4 +861,15 @@ export default {
 	word-break:keep-all;
 	overflow:hidden;
 }
+.head_info{
+  padding: 10px 0 25px;
+}
+.f-24{
+  font-size:24px;
+}
+.fn-right{
+  display: flex;
+  justify-content: flex-end;
+}
+
 </style>
