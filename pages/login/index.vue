@@ -5,12 +5,12 @@
       <view class="fn-center p-t-lg p-b-md">
         <img :src="logoMap.login_logo" class="h-80" />
       </view>
-      <view class="form m-lg bg-panel-3 p-lg rounded-md box-shadow">
-        <view class="form-item border-b m-b-lg p-b-xs ">
+      <view class="form m-lg">
+        <view class="form-item border-b m-b-lg p-b-xs  bg-panel-3 rounded-md box-shadow">
           <view class="label m-b-lg">{{$t('login.a0')}}</view>
           <v-input class="color-light" v-model="form.account" :placeholder="$t('login.a1')"></v-input>
         </view>
-        <view class="form-item border-b m-b-xl p-b-xs">
+        <view class="form-item border-b m-b-xl p-b-xs  bg-panel-3 rounded-md box-shadow">
           <view class="label m-b-lg">{{$t('login.a2')}}</view>
           <v-input
             class="color-light"
@@ -24,20 +24,23 @@
         </view>
         
       </view>
-	  <view class="m-x-lg m-y-md d-flex">
-		  
-	  	<v-link
-			tag="div"
-			to="/pages/safe/forget-password"
-			class="tips fn-sm color-sell"
-		>{{$t('login.a5')}}？</v-link>
+	  <view class="m-x-lg m-y-md">
 		
-		
-		
-	  <view class="mlaotu fn-12">
-	    {{$t('login.a6')}}，
+	  <view class="mlaotu fn-14">
+	    {{$t('login.a6')}}？
 	    <v-link to="/pages/reg/index?from=login" class="color-sell d-inline-block" >{{$t('login.a7')}}</v-link>
 	  </view>
+		
+    <view class="mlaotu  fn-14">
+      <v-link
+        tag="div"
+        to="/pages/safe/forget-password"
+        class="tips fn-14 color-sell"
+      >{{$t('login.a5')}}？</v-link>  
+    </view>
+	  	
+		
+		
 	 </view>
     </main>
     <view class="m-x-lg p-x-lg">
@@ -213,6 +216,24 @@ export default {
   }
 }
 .mlaotu{
-	margin-left: auto;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.form{
+  background: none;
+  box-shadow: none;
+  padding: 20px 0;
+  .form-item{
+  padding: 10px 20px;
+  }
+  .label{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .color-light{
+    padding-bottom: 10px;
+    font-size: 16px;
+  }
 }
 </style>

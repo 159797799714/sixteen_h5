@@ -665,11 +665,11 @@ export default {
 	.middleList{
 		display:flex;
 		margin:25rpx 0 0;
-		justify-content:space-around;
+		justify-content:space-between;
 	}
 	.middleArea{
     padding: 15px 0;
-		width:45%;
+		width:48%;
 	}
 	.coinHeader{
 		display: flex;

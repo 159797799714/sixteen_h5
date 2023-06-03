@@ -1,6 +1,11 @@
 <template>
   <v-page>
-    <v-header :left-arrow="false" :title="$t('exchange.a2')"></v-header>
+    <v-header :left-arrow="false" :title="$t('exchange.a2')">
+      
+      <template #right>
+        <van-botton @click.stop="goSecondNav">{{ $t('second.nav') }}</van-botton>
+      </template>
+    </v-header>
     <van-tabs
       :ellipsis="false"
       :border="false"
@@ -221,6 +226,9 @@ export default {
         this.contractStatusShow = false;
       });
     },
+    goSecondNav() {
+      this.$emit('changeTab', 'Second')
+    }
   },
   created() {
     this.getMarketList();

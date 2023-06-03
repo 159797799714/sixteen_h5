@@ -1,7 +1,7 @@
 <template>
   <v-page>
 	  
-    <template v-for="item in navList">
+    <!-- <template v-for="item in navList">
       <component
         v-if="cashViews.includes(item.tel)"
         v-show="tab == item.tel"
@@ -9,8 +9,19 @@
         :key="item.tel"
         :isShow="tab == item.tel && tabShow"
         class="layout-main"
+        @changeTab="tabChange"
       ></component>
-    </template>
+    </template> -->
+
+      <component
+        :is="tab"
+        :key="tab"
+        :isShow="tabShow"
+        class="layout-main"
+        @changeTab="name => tabChange('', name)"
+      ></component>
+
+
     <view class="footer d-flex p-y-xs bg-tab-nav fn-center">
 		
       <view
@@ -80,12 +91,12 @@ export default {
           icon: "static/img/base_caidan_0.png",
           activeIcon: "static/img/base_caidan_1.png",
         },
-        {
-          label: this.$t("second.nav"),
-          tel: "second",
-          icon: "static/img/base_otc_0.png",
-          activeIcon: "static/img/base_otc_1.png",
-        },
+        // {
+        //   label: this.$t("second.nav"),
+        //   tel: "second",
+        //   icon: "static/img/base_otc_0.png",
+        //   activeIcon: "static/img/base_otc_1.png",
+        // },
         {
           label: this.$t("base.d2"),
           tel: "mine",
@@ -103,12 +114,13 @@ export default {
     };
   },
   methods: {
-    tabChange(name) {
-      this.tab = name;
-	  this.cashViews = [];
-      if (!this.cashViews.includes(name)) {
-        this.cashViews.push(name);
-      }
+    tabChange(name, type) {
+      debugger
+      this.tab = type || name;
+	    // this.cashViews = [];
+      // if (!this.cashViews.includes(name)) {
+      //   this.cashViews.push(name);
+      // }
     },
   },
   onShow() {

@@ -3,6 +3,7 @@
     v-bind="{...$props}"
     :disabled="dDisabled"
     :loading="dLoading"
+    class="code-btn"
     :class="type"
     
     @click="$emit('click',$event);toNext()"
@@ -166,11 +167,10 @@ export default {
 .green-plain {
   ::v-deep uni-button {
     background: transparent;
-    color: $green;
-    border: 1px solid $green;
+    color: #4048EF;
+    border: 1px solid #4048EF;
     border-radius:inherit;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding: 0 10px;
   }
 }
 .red {
