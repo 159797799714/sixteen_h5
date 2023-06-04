@@ -1,6 +1,13 @@
 <template>
   <view class="d-flex flex-col">
-    <v-header :left-arrow="false" :title="$t('second.nav')"></v-header>
+    <v-header :left-arrow="false" :title="$t('second.nav')">
+      <template #right>
+        <span class="fn-16 van-tab--active">{{ $t('second.nav') }}</span>
+      </template>
+      <template #left>
+        <span @click.stop="goSecondNav">{{ $t('exchange.a2') }}</span>
+      </template>
+    </v-header>
 
 
       <!-- 币币交易 -->
@@ -26,7 +33,7 @@
       :show="symbolListShow"
       @close="symbolListShow = false"
       close-on-popstate
-      position="left"
+      position="right"
       custom-style="height:100%;width:70%"
     >
       <symbol-list
@@ -166,6 +173,10 @@ export default {
       }
       return curParam;
     },
+    
+    goSecondNav() {
+      this.$emit('changeTab', 'Contract')
+    }
   },
   created() {
     this.query = this.getQuery();

@@ -79,6 +79,12 @@
           </view>
           <view class="fn-12">{{ $t("base.a4") }}</view>
         </v-link>
+        <v-link tag="div" :to="{path:'/pages/invite/index'}" class="item" >
+          <view class="icon fn-22">
+            <img class="h-54" src="static/img/4.png" />
+          </view>
+          <view class="fn-12">{{ $t("base.b7") }}</view>
+        </v-link> 
         <v-link tag="div" :to="{path:'/pages/base/index',query:{
           tel:'exchange-operation'
         }}" class="item" >
@@ -87,12 +93,6 @@
           </view>
           <view class="fn-12">{{ $t("exchange.a1") }}</view>
         </v-link>
-        <v-link tag="div" :to="{path:'/pages/invite/index'}" class="item" >
-          <view class="icon fn-22">
-            <img class="h-54" src="static/img/4.png" />
-          </view>
-          <view class="fn-12">{{ $t("base.b7") }}</view>
-        </v-link> 
         <v-link tag="div" :to="{path:'/pages/base/kefu'}" class="item" >
           <view class="icon fn-22">
             <img class="h-54" src="static/img/renzheng.png" />

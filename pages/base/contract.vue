@@ -2,8 +2,11 @@
   <v-page>
     <v-header :left-arrow="false" :title="$t('exchange.a2')">
       
+      <template #left>
+        <span class="fn-16 van-tab--active">{{ $t('exchange.a2') }}</span>
+      </template>
       <template #right>
-        <van-botton @click.stop="goSecondNav">{{ $t('second.nav') }}</van-botton>
+        <span @click.stop="goSecondNav">{{ $t('second.nav') }}</span>
       </template>
     </v-header>
     <van-tabs
@@ -63,7 +66,7 @@
       @close="symbolListShow = false"
       closeable
       close-on-popstate
-      position="left"
+      position="right"
       custom-style="height:100%;width:70%"
     >
       <symbol-list

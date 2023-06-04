@@ -26,7 +26,7 @@
 		
       <view
         class="item line-height-1 flex-fill"
-        :class="{ 'router-link-active': tab == item.tel }"
+        :class="{ 'router-link-active': tab == item.tel || (item.tal === 'Contract' && tab === 'Second') }"
         v-for="item in navList"
         :key="item.tel"
         @click="tabChange(item.tel)"
@@ -34,7 +34,7 @@
         <view class="icon">
           <img
             class="h-15"
-            v-if="tab == item.tel"
+            v-if="tab == item.tel && (item.tal === 'Contract' && tab === 'Second')"
             :src="item.activeIcon"
             alt=""
           />
@@ -74,10 +74,10 @@ export default {
           activeIcon: "static/img/base_home_1.png",
         },
         {
-          label: this.$t("exchange.a0"),
-          tel: "exchange-operation",
-          icon: "static/img/base_link_0.png",
-          activeIcon: "static/img/base_link_1.png",
+          label: this.$t("exchange.a2"),
+          tel: "Contract",
+          icon: "static/img/base_caidan_0.png",
+          activeIcon: "static/img/base_caidan_1.png",
         },
         {
           label: this.$t("base.a4"),
@@ -86,10 +86,10 @@ export default {
           activeIcon: "static/img/base_qukuai_1.png",
         },
         {
-          label: this.$t("exchange.a2"),
-          tel: "contract",
-          icon: "static/img/base_caidan_0.png",
-          activeIcon: "static/img/base_caidan_1.png",
+          label: this.$t("exchange.a0"),
+          tel: "exchange-operation",
+          icon: "static/img/base_link_0.png",
+          activeIcon: "static/img/base_link_1.png",
         },
         // {
         //   label: this.$t("second.nav"),
@@ -115,7 +115,6 @@ export default {
   },
   methods: {
     tabChange(name, type) {
-      debugger
       this.tab = type || name;
 	    // this.cashViews = [];
       // if (!this.cashViews.includes(name)) {

@@ -3,7 +3,7 @@
 		<v-header :title="$t('base.d2')" :left-arrow="false"></v-header>
 		<!-- <view style="height: var(--status-bar-height)"></view> -->
 		<view
-			class="head bg-panel-3 h-66 p-x-md m-x-md d-flex justify-between align-center bgb4 rounded-md color-plain p-y-xl">
+			class="head bg-panel-3 h-66 p-x-md m-x-md d-flex justify-between align-center bgb4 rounded-md color-plain p-y-xl money">
 			<view>
 				<view class="d-flex">
 					<text class="fn-sm d-block m-t-md">{{ $t("base.d6") }}(USDT)</text>
@@ -327,5 +327,8 @@
 	}
 	.text-center{
 		text-align: center;
+	}
+	.money{
+		padding-bottom: 40px!important;
 	}
 </style>

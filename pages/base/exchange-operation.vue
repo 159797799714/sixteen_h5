@@ -60,7 +60,7 @@
       :show="symbolListShow"
       @close="symbolListShow = false"
       close-on-popstate
-      position="left"
+      position="right"
       custom-style="height:100%;width:70%"
     >
       <symbol-list

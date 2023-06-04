@@ -68,7 +68,7 @@ let dark = `
     --mimicry-shadow:10px 10px 15px #1a1a1a, -10px -10px 15px #242424;
     --shadow: 0px 0px 33px 0px rgba(34, 34, 44, 0.25);
     --picker-mask:linear-gradient(180deg,#1f1f1f,rgba(70, 70, 70, 0.6)),linear-gradient(0deg,#1f1f1f,rgba(70, 70, 70, 0.6));
-    --bg-top:#cccccc;
+    --bg-top:#737b9a;
     --bg-bottom:#24242f;
     --tab-nav:#31313F;
     --tab-nav-shadow:0px -7px 20px 0px rgba(37, 37, 48, 0.83);

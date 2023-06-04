@@ -84,7 +84,7 @@
       :show="optListShow"
       @close="optListShow = false"
       close-on-popstate
-      position="left"
+      position="right"
       custom-style="width:70%;height:100%"
     >
       <option-nav-list @close="optListShow = false" @check="changeCoin" />
