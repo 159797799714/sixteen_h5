@@ -29,7 +29,7 @@
 						<view class="m-x-md">
 							<view class="m-y-lg">
 								<view class="bg-panel-3 p-xs p-x-md rounded-lg bgb3"
-									:class="theme == 'light' ? 'bgb3-white' : ''" style="position: relative">
+									:class="theme == 'dark' ? '' : 'bgb3-white'" style="position: relative">
 									<text class="fn-sm d-block color-gray-6 m-t-xs">{{ $t("base.d6") }}(USDT)</text>
 
 									<text
@@ -132,7 +132,7 @@
 
 					<van-tab :title="$t('base.e4')" :name="1" class="p-t-md">
 						<view class="m-x-md">
-							<view class="bgb3 p-x-md p-y-lg rounded-lg" :class="theme == 'light' ? 'bgb3-white' : ''"
+							<view class="bgb3 p-x-md p-y-lg rounded-lg" :class="theme == 'dark' ? '' : 'bgb3-white'"
 								style="position: relative">
 								<view class="fn-sm d-flex justify-between color-gray-6 m-t-xs">
 									<span> USDT </span>
